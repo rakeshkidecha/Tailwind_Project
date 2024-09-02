@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lixir</title>
+    <!-- fonts  -->
+    <link rel="stylesheet" href="../fonts/stylesheet.css" type="text/css">
+    <!-- swiper-slider  -->
+     <link rel="stylesheet" href="../dist/css/swiper-bundle.min.css" type="text/css">
+    <!-- remixicon -->
+    <link rel="stylesheet" href="../remix/remixicon.css" type="text/css">
+    <!-- main css  -->
+    <link rel="stylesheet" href="style.css" type="text/css">
+    
+</head>
+<body class="font-Montserrat">
+    <!-- loader -->
+    <div id="loader" class="w-full h-screen flex items-center justify-center fixed top-0 left-0 bg-white z-50">
+        <div class="w-14 h-14 border-4 border-theme rounded-full border-t-4 border-t-yello animate-spin"></div>
+    </div>
+    <!-- header  -->
+    <header class="shadow-lg fixed w-full bg-white-opa z-40">
+        <div class="container">
+            <div class="flex items-center relative py-5 lg:py-0">
+                <div class="logo">
+                    <a href="javacsript:void(0)">
+                        <img src="../images/logo.png" alt="logo" title="logo">
+                    </a>
+                </div>
+                <nav class="flex justify-between w-full ms-10 items-center">
+                    <ul class="lg:flex hidden lg:bg-transparent bg-white px-4 py-2 lg:py-0 lg:shadow-none shadow-md w-full lg:static absolute top-full left-5">
+                        <li class="relative lg:py-7 py-2 group/item">
+                            <a href="javascript:void(0)" class="text-base font-semibold me-7">Home<i class="ri-arrow-down-s-line"></i></a>
+                            <ul class="bg-white shadow-lg py-1 px-5 absolute top-full left-0 invisible group-hover/item:visible">
+                                <li class="my-2 whitespace-nowrap"><a href="javascript:void(0)">Slider Header</a></li>
+                                <li class="my-2 whitespace-nowrap"><a href="javascript:void(0)">Slider Classic</a></li>
+                                <li class="my-2 whitespace-nowrap"><a href="javascript:void(0)">Static Header</a></li>
+                                <li class="my-2 whitespace-nowrap"><a href="javascript:void(0)">Static Classic</a></li>
+                                <li class="my-2 whitespace-nowrap"><a href="javascript:void(0)">Youtube Backgound</a></li>
+                                <li class="my-2 whitespace-nowrap"><a href="javascript:void(0)">Youtube Classic</a></li>
+                                <li class="my-2 whitespace-nowrap"><a href="javascript:void(0)">Self-hosted Video</a></li>
+                                <li class="my-2 whitespace-nowrap"><a href="javascript:void(0)">Self-hosted Classic</a></li>
+                            </ul>
+                        </li>
+                        <li class="relative lg:py-7 py-2 group/item">
+                            <a href="javascript:void(0)" class="text-base font-semibold me-7">Pages<i class="ri-arrow-down-s-line"></i></a>
+                            <ul class="bg-white shadow-lg py-1 px-5 absolute top-full left-0 invisible group-hover/item:visible">
+                                <li class="my-2 whitespace-nowrap"><a href="javascript:void(0)">Services</a></li>
+                                <li class="my-2 whitespace-nowrap"><a href="javascript:void(0)">About</a></li>
+                                <li class="my-2 whitespace-nowrap"><a href="javascript:void(0)">Alumni</a></li>
+                                <li class="my-2 whitespace-nowrap"><a href="javascript:void(0)">Blank page</a></li>
+                                <li class="my-2 whitespace-nowrap"><a href="javascript:void(0)">404 Pgage</a></li>
+                                <li class="my-2 whitespace-nowrap"><a href="javascript:void(0)">Login</a></li>
+                                <li class="my-2 whitespace-nowrap"><a href="javascript:void(0)">Registation</a></li>
+                            </ul>
+                        </li>
+                        <li class="relative lg:py-7 py-2 group/item">
+                            <a href="javascript:void(0)" class="text-base font-semibold me-7">Nesw<i class="ri-arrow-down-s-line"></i></a>
+                            <ul class="bg-white shadow-lg py-1 px-5 absolute top-full left-0 invisible group-hover/item:visible">
+                                <li class="my-2 whitespace-nowrap"><a href="javascript:void(0)">Newsroom</a></li>
+                                <li class="my-2 whitespace-nowrap"><a href="javascript:void(0)">Single News</a></li>
+                            </ul>
+                        </li>
+                        <li class="relative lg:py-7 py-2 group/item">
+                            <a href="javascript:void(0)" class="text-base font-semibold me-7">Elements<i class="ri-arrow-down-s-line"></i></a>
+                            <ul class="bg-white shadow-lg py-1 px-5 absolute top-full left-0 invisible group-hover/item:visible">
+                                <li class="my-2 whitespace-nowrap"><a href="javascript:void(0)">Buttons</a></li>
+                                <li class="my-2 whitespace-nowrap"><a href="javascript:void(0)">Colors</a></li>
+                                <li class="my-2 whitespace-nowrap"><a href="javascript:void(0)">Google map</a></li>
+                                <li class="my-2 whitespace-nowrap"><a href="javascript:void(0)">Grid</a></li>
+                                <li class="my-2 whitespace-nowrap"><a href="javascript:void(0)">Icon</a></li>
+                                <li class="my-2 whitespace-nowrap"><a href="javascript:void(0)">Layout Helper</a></li>
+                                <li class="my-2 whitespace-nowrap"><a href="javascript:void(0)">Modal Video</a></li>
+                                <li class="my-2 whitespace-nowrap"><a href="javascript:void(0)">Swiper</a></li>
+                                <li class="my-2 whitespace-nowrap"><a href="javascript:void(0)">Typography</a></li>
+                            </ul>
+                        </li>
+                        <li class="lg:py-7 py-2"><a href="javascript:void(0)" class="text-base font-semibold me-7">Contact</a></li>
+                    </ul>
+                    <div class="ms-auto">
+                        <a href="javascript:void(0)" class="py-1 px-5 border-2 border-theme rounded-3xl hover:bg-theme hover:text-white duration-300">Purchase</a>
+                        <i class="ri-menu-line p-2 border-2 border-theme rounded-lg ms-2 lg:hidden" id="toggle"></i>
+                    </div>
+                </nav>
+            </div>
+        </div>
+     </header>
+
+     <main>
+        <!-- banner  -->
+        <section>
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide bg-[url('../images/banner1.jpg')] w-full h-728 bg-no-repeat bg-cover bg-center">
+                        <div class="h-full flex items-center">
+                            <div class="container">
+                                <div>
+                                    <h1 class="text-6xl font-bold text-theme">Helping Leaders</h1>
+                                    <p class="text-3xl text-theme my-5">We look forward to help you in taking your <br/> company to new height.</p>
+                                    <a href="javascript:void(0)" class="py-3 px-8 mt-2 inline-block bg-theme text-white text-sm font-semibold tracking-wider rounded duration-300 border-2 border-theme hover:bg-transparent hover:text-theme">Read more<i class="ri-arrow-right-s-line"></i></a>
+                                    <a href="javascript:void(0)" class="py-3 px-8 mt-2 inline-block bg-yello text-theme text-sm font-bold tracking-wider rounded ms-2 duration-300 border-2 border-yello hover:bg-transparent">Contact us<i class="ri-arrow-right-s-line"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide bg-[url('../images/banner2.jpg')] w-full h-728 bg-no-repeat bg-cover bg-center">
+                        <div class="h-full flex items-center">
+                            <div class="container">
+                                <div>
+                                    <h1 class="text-6xl font-bold text-theme">Growth Partners</h1>
+                                    <p class="text-3xl text-theme my-5">Connect with top consultants hand-picked bt <br/> Elixir consulting and finance.</p>
+                                    <a href="javascript:void(0)" class="py-3 px-8 mt-2 inline-block bg-theme text-white text-sm font-semibold tracking-wider rounded duration-300 border-2 border-theme hover:bg-transparent hover:text-theme">Read more<i class="ri-arrow-right-s-line"></i></a>
+                                    <a href="javascript:void(0)" class="py-3 px-8 mt-2 inline-block bg-yello text-theme text-sm font-bold tracking-wider rounded ms-2 duration-300 border-2 border-yello hover:bg-transparent">Contact us<i class="ri-arrow-right-s-line"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide bg-[url('../images/banner3.jpg')] w-full h-728 bg-no-repeat bg-cover bg-center">
+                        <div class="h-full flex items-center">
+                            <div class="container">
+                                <div>
+                                    <h1 class="text-6xl font-bold text-theme">Expert Consultants</h1>
+                                    <p class="text-3xl text-theme my-5">Over 10 years of experience in helping clients <br/> finding comprehensive solutions.</p>
+                                    <a href="javascript:void(0)" class="py-3 px-8 mt-2 inline-block bg-theme text-white text-sm font-semibold tracking-wider rounded duration-300 border-2 border-theme hover:bg-transparent hover:text-theme">Read more<i class="ri-arrow-right-s-line"></i></a>
+                                    <a href="javascript:void(0)" class="py-3 px-8 mt-2 inline-block bg-yello text-theme text-sm font-bold tracking-wider rounded ms-2 duration-300 border-2 border-yello hover:bg-transparent">Contact us<i class="ri-arrow-right-s-line"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-button-next w-10 h-10 bg-white shadow-lg rounded-full after:text-[15px] after:content-['next']"></div>
+                <div class="swiper-button-prev w-10 h-10 bg-white shadow-lg rounded-full after:text-[15px] after:content-['prev']"></div>
+            </div>
+        </section>
+        <!-- about  -->
+         <section class="py-20">
+            <div class="container">
+                <div class="text-center relative pb-3 mb-20 before:content-[''] before:w-28 before:h-1 before:bg-theme before:absolute before:left-1/2 before:bottom-0 before:-translate-x-1/2">
+                    <h2 class="text-4xl font-bold text-theme">Welcome to the Elixir</h2>
+                    <p class="text-text-color py-2">Get expert consultancy and support with Elixir, an advisory firm <br/> that stand by your side always.</p>
+                </div>
+                <div class="grid lg:grid-cols-4 md:grid-cols-2 gap-3">
+                    <div class="text-center">
+                        <i class="ri-line-chart-line mb-5 inline-block text-4xl w-24 h-24 leading-[96px] rounded-full border text-theme bg-slate-50 border-gray-300 duration-300 ease-linear hover:bg-theme hover:text-white"></i>
+                        <h3 class="text-2xl font-semibold mb-2">Business Consulting</h3>
+                        <p class="text-text-color">Solution for every business related problems, readily and skillfully.</p>
+                    </div>
+                    <div class="text-center">
+                        <i class="ri-notification-3-line mb-5 inline-block text-4xl w-24 h-24 leading-[96px] rounded-full border text-theme bg-slate-50 border-gray-300 duration-300 ease-linear hover:bg-theme hover:text-white"></i>
+                        <h3 class="text-2xl font-semibold mb-2">Risk Management</h3>
+                        <p class="text-text-color">Calculate every possible risk in your business, take control over them.</p>
+                    </div>
+                    <div class="text-center">
+                        <i class="ri-lightbulb-flash-line mb-5 inline-block text-4xl w-24 h-24 leading-[96px] rounded-full border text-theme bg-slate-50 border-gray-300 duration-300 ease-linear hover:bg-theme hover:text-white"></i>
+                        <h3 class="text-2xl font-semibold mb-2">Market Research</h3>
+                        <p class="text-text-color">Know the market before taking any step, reduce risks before you go</p>
+                    </div>
+                    <div class="text-center">
+                        <i class="ri-customer-service-fill mb-5 inline-block text-4xl w-24 h-24 leading-[96px] rounded-full border text-theme bg-slate-50 border-gray-300 duration-300 ease-linear hover:bg-theme hover:text-white"></i>
+                        <h3 class="text-2xl font-semibold mb-2">Quality Services</h3>
+                        <p class="text-text-color">Experience unparalleled service, from beginning to final construction.</p>
+                    </div>
+                </div>
+                <div class="my-16 relative">
+                    <img src="../images/about1.jpg" alt="about" title="about" width="100%" class="rounded-xl">
+                    <i class="ri-play-fill text-4xl text-theme flex shadow-icon-shadow items-center justify-center w-20 h-20  rounded-full bg-white absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 duration-300 hover:scale-110"></i>
+                </div>
+                <div class="grid lg:grid-cols-3 md:grid-cols-2 gap-3">
+                    <div class="pe-20">
+                        <h3 class="text-theme text-2xl font-semibold"><i class="ri-group-fill me-2"></i>Awesome Team</h3>
+                        <p class="text-text-color mt-2">Before talking destination, we shine a spotlweight across your organization to fully understand it.</p>
+                    </div>
+                    <div class=" pe-20">
+                        <h3 class="text-theme text-2xl font-semibold"><i class="ri-discuss-fill me-2"></i>Excellent Support</h3>
+                        <p class="text-text-color mt-2">If you face any trouble, you can always let our dedicated support team help you. They are ready for you 24/7.</p>
+                    </div>
+                    <div class=" pe-20">
+                        <h3 class="text-theme text-2xl font-semibold"><i class="ri-flashlight-fill me-2"></i>Faster Performance</h3>
+                        <p class="text-text-color mt-2">We develop a systematic well-ordered process of analysis, from concept through implementation.</p>
+                    </div>
+                </div>
+            </div>
+         </section>
+        <!-- Services -->
+         <section class="bg-slate-50 py-20">
+            <div class="container">
+                <div class="text-center relative pb-5 mb-20 before:content-[''] before:w-24 before:h-1 before:bg-theme before:absolute before:left-1/2 before:bottom-0 before:-translate-x-1/2">
+                    <h2 class="text-4xl font-bold text-theme">Our Services</h2>
+                </div>
+                <div class="flex flex-wrap items-center rounded-lg bg-white overflow-hidden">
+                    <div class="lg:w-1/2 w-full">
+                        <img src="../images/services1.jpg" alt="services" title="services" width="100%">
+                    </div>
+                    <div class="lg:w-1/2">
+                        <div class="p-10 relative before:content-[''] before:w-8 before:h-8 before:rotate-45 before:bg-white before:absolute before:top-1/2 before:-left-3 before:-translate-y-1/2">
+                            <h3 class="text-theme text-2xl font-bold">Business Consulting</h3>
+                            <p class="text-text-color my-4">As one of the world’s largest accountancy networks, elixir helps a diverse range of clients with a diverse range of needs.This is especially true of our Advisory Practice, which provides corporate finance and transaction services, business restructuring.</p>
+                            <a href="javascript:void(0)" class="tracking-wide text-theme font-semibold pb-1 hover:text-gray-500">Learn More<i class="ri-arrow-right-line ms-2"></i></a>
+                        </div>
+                    </div>
+                    <div class="lg:w-1/2 w-full lg:order-2">
+                        <img src="../images/services2.jpg" alt="services" title="services" width="100%">
+                    </div>
+                    <div class="lg:w-1/2 lg:order-1">
+                        <div class="p-10 relative before:content-[''] before:w-8 before:h-8 before:rotate-45 before:bg-white before:absolute before:top-1/2 before:-right-3 before:-translate-y-1/2">
+                            <h3 class="text-theme text-2xl font-bold">Tax consulting</h3>
+                            <p class="text-text-color my-4">Elixir serves clients across the country and around the world as they navigate an increasingly complex tax landscape. Our tax professionals draw on deep experience and industry-specific knowledge to deliver clients the insights and innovation they need.</p>
+                            <a href="javascript:void(0)" class="tracking-wide text-theme font-semibold pb-1 hover:text-gray-500">Learn More<i class="ri-arrow-right-line ms-2"></i></a>
+                        </div>
+                    </div>
+                    <div class="lg:w-1/2 w-full lg:order-3">
+                        <img src="../images/services3.jpg" alt="services" title="services" width="100%">
+                    </div>
+                    <div class="lg:w-1/2 lg:order-4">
+                        <div class="p-10 relative before:content-[''] before:w-8 before:h-8 before:rotate-45 before:bg-white before:absolute before:top-1/2 before:-left-3 before:-translate-y-1/2">
+                            <h3 class="text-theme text-2xl font-bold">Advisory</h3>
+                            <p class="text-text-color my-4">To help you understand what this road looks like, we surveyed 1165 digital marketers across Europe and North America to explore current trends and priorities in digital marketing.</p>
+                            <a href="javascript:void(0)" class="tracking-wide text-theme font-semibold pb-1 hover:text-gray-500">Learn More<i class="ri-arrow-right-line ms-2"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid lg:grid-cols-3 md:grid-cols-2 gap-3 mt-16">
+                    <div class="pe-20">
+                        <h3 class="text-theme text-2xl font-semibold"><i class="ri-refund-line me-2"></i>Special financing</h3>
+                        <p class="text-text-color mt-2">Apply for special financial support and earn exclusive rewards.</p>
+                    </div>
+                    <div class="pe-20">
+                        <h3 class="text-theme text-2xl font-semibold"><i class="ri-message-2-fill me-2"></i>Chat with team</h3>
+                        <p class="text-text-color mt-2">Have a question? Chat online with an expert. 
+                            <a href="javascript:void(0)" class="text-theme font-semibold hover:underline">Start chatting <i class="ri-external-link-fill text-xl"></i></a>
+                        </p>
+                    </div>
+                    <div class="pe-20">
+                        <h3 class="text-theme text-2xl font-semibold"><i class="ri-phone-fill me-2"></i>Call a specialist</h3>
+                        <p class="text-text-color mt-2">Our 24/7 support team is ready for you at 1-800-MY-Elixir.</p>
+                    </div>
+                </div>
+            </div>
+         </section>
+        <!-- Choose  -->
+        <section class="py-20">
+            <div class="container">
+                <div class="text-center relative pb-5 mb-20 before:content-[''] before:w-24 before:h-1 before:bg-theme before:absolute before:left-1/2 before:bottom-0 before:-translate-x-1/2">
+                    <h2 class="text-4xl font-bold text-theme">Why Choose Elixir</h2>
+                </div>
+                <div class="grid lg:grid-cols-2 gap-4">
+                    <div class="overflow-hidden rounded-xl ">
+                        <img src="../images/choose.jpg" alt="choose-img" title="choose-img" width="100%" class="duration-300 ease-linear hover:scale-110">
+                    </div>
+                    <div class="lg:px-16">
+                        <div>
+                            <h3 class="text-theme text-2xl font-semibold"><i class="ri-message-3-fill me-2"></i>We Are Professional</h3>
+                            <p class="text-text-color mt-2">We resource, train, speak, mentor and encourage; marketplace leaders, business owners and career professionals to be effective in the workplace.</p>
+                        </div>
+                        <div class="lg:my-20 my-5">
+                            <h3 class="text-theme text-2xl font-semibold"><i class="ri-palette-fill me-2"></i>We Are Creative</h3>
+                            <p class="text-text-color mt-2">With so many factors to consider when deciding how to characterize your company , wouldn’t it be great to have a group of forward-thinking, well-informed individuals on board who know what they’re doing?</p>
+                        </div>
+                        <div>
+                            <h3 class="text-theme text-2xl font-semibold"><i class="ri-timer-fill me-2"></i>24/7 Great Support</h3>
+                            <p class="text-text-color mt-2">Design clever and compelling marketing strategies, improve product positioning, and drive conversion rates, Elixir is all time available to guide you.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- contact  -->
+        <section class="py-20 bg-dark-blue">
+            <div class="container">
+                <div class="lg:flex justify-between items-center">
+                    <h2 class="text-white text-3xl font-semibold">If you have any query related investment... we are available 24/7</h2>
+                    <a href="javascript:void(0)" class="text-theme inline-block mt-4 lg:m-0 py-2 px-6 bg-white rounded-3xl text-sm font-bold tracking-wide border border-white duration-300 hover:bg-transparent hover:text-white">Contact Us</a>
+                </div>
+            </div>
+        </section>
+        <!-- Things You Get -->
+        <section class="py-20">
+            <div class="container">
+                <div class="text-center relative pb-5 mb-20 before:content-[''] before:w-24 before:h-1 before:bg-theme before:absolute before:left-1/2 before:bottom-0 before:-translate-x-1/2">
+                    <h2 class="text-4xl font-bold text-theme">Things You Get</h2>
+                </div>
+                <div class="grid lg:grid-cols-3 md:grid-cols-2 gap-10">
+                    <div class="text-center">
+                        <i class="ri-creative-commons-sa-line text-5xl text-theme"></i>
+                        <h3 class="text-26 font-semibold text-theme my-3">Creative Support</h3>
+                        <p class="text-text-color">We transform brands, grow businesses, and tell brand and product stories in a most creative way.</p>
+                    </div>
+                    <div class="text-center">
+                        <i class="ri-mail-line text-5xl text-theme"></i>
+                        <h3 class="text-26 font-semibold text-theme my-3">Creating Experiences</h3>
+                        <p class="text-text-color">We cover a large range of creative platforms and digital projects with one purpose: to create experiences.</p>
+                    </div>
+                    <div class="text-center">
+                        <i class="ri-focus-2-line text-5xl text-theme"></i>
+                        <h3 class="text-26 font-semibold text-theme my-3">Product Consulting</h3>
+                        <p class="text-text-color">We guide you through the pipelines that generate new products with higher potential and lower risk.</p>
+                    </div>
+                    <div class="text-center">
+                        <i class="ri-global-line text-5xl text-theme"></i>
+                        <h3 class="text-26 font-semibold text-theme my-3">Business Boosting</h3>
+                        <p class="text-text-color">We provide energy-efficient and environmentally conservative solutions to our clients to boost their business.</p>
+                    </div>
+                    <div class="text-center">
+                        <i class="ri-currency-line text-5xl text-theme"></i>
+                        <h3 class="text-26 font-semibold text-theme my-3">Strategic Approach</h3>
+                        <p class="text-text-color">Based on solid strategic framework and real, relevant research, we create prototypes, not presentations.</p>
+                    </div>
+                    <div class="text-center">
+                        <i class="ri-line-chart-line text-5xl text-theme"></i>
+                        <h3 class="text-26 font-semibold text-theme my-3">Logistic Consulting</h3>
+                        <p class="text-text-color">We work buy side and sell side to give our clienrts hard hitting answers and focus hard on best opportunities.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Request -->
+        <section class="py-20 bg-dark-blue">
+            <div class="container">
+                <div class="flex flex-wrap items-center">
+                    <div class="md:w-1/3">
+                        <div class="p-8 border-2 border-yello rounded-xl text-center text-white md:me-5 my-2">
+                            <h3 class="text-3xl font-bold mb-3">Request a call back</h3>
+                            <p>Would you like to speak to one of our financial advisers over the phone? Just submit your details and we’ll be in touch shortly. You can also email us if you would prefer.</p>
+                        </div>
+                    </div>
+                    <div class="md:w-2/3 w-full">
+                        <form class="my-2 md:ms-5">
+                            <h4 class="text-2xl font-semibold text-white">I would like ti discuss :</h4>
+                            <div class="grid lg:grid-cols-2 md:grid-cols-1 sm:grid-cols-2 lg:gap-5 md:gap-0 sm:gap-5">
+                                <div>
+                                    <input type="text" placeholder="Your Name" class="w-full py-2 px-4 my-2 bg-white rounded placeholder:text-sm">
+                                    <input type="text" placeholder="Subject" class="w-full py-2 px-4 my-2 bg-white rounded placeholder:text-sm">
+                                </div>
+                                <div>
+                                    <input type="text" placeholder="Phone Nomber" class="w-full py-2 px-4 my-2 bg-white rounded placeholder:text-sm"> 
+                                    <button class="w-full py-2 px-4 my-2 bg-yello rounded text-sm font-bold">Submit</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- leadership -->
+        <section class="py-20 bg-slate-50">
+            <div class="container">
+                <div class="text-center relative pb-5 mb-20 before:content-[''] before:w-24 before:h-1 before:bg-theme before:absolute before:left-1/2 before:bottom-0 before:-translate-x-1/2">
+                    <h2 class="text-4xl font-bold text-theme">Global leadership</h2>
+                </div>
+                <div class="grid lg:grid-cols-3 md:grid-cols-2 gap-5">
+                    <div class="rounded-xl overflow-hidden">
+                        <div class="overflow-hidden">
+                            <img src="../images/leadership1.jpg" alt="leadership" title="leadership" width="100%" class="duration-300 ease-linear hover:scale-110">
+                        </div>
+                        <div class="text-center bg-white p-8">
+                            <h4 class="text-theme text-2xl font-semibold">Reenal Scott</h4>
+                            <h6 class="text-xs my-2 text-gray-500 tracking-wider">Advertising Consultant</h6>
+                            <p class="text-text-color">Reenal Scott is the Founder and CEO of Elixir, which he started from his dorm room in 2013 with 3 people only.</p>
+                        </div>
+                    </div>
+                    <div class="rounded-xl overflow-hidden">
+                        <div class="overflow-hidden">
+                            <img src="../images/leadership2.jpg" alt="leadership" title="leadership" width="100%" class="duration-300 ease-linear hover:scale-110">
+                        </div>
+                        <div class="text-center bg-white p-8">
+                            <h4 class="text-theme text-2xl font-semibold">Lily Anderson</h4>
+                            <h6 class="text-xs my-2 text-gray-500 tracking-wider">Advertising Consultant</h6>
+                            <p class="text-text-color">Lily leads Elixir UK and oversees the company’s Customer Operations teams supporting millions ofr users.</p>
+                        </div>
+                    </div>
+                    <div class="rounded-xl overflow-hidden">
+                        <div class="overflow-hidden">
+                            <img src="../images/leadership3.jpg" alt="leadership" title="leadership" width="100%" class="duration-300 ease-linear hover:scale-110">
+                        </div>
+                        <div class="text-center bg-white p-8">
+                            <h4 class="text-theme text-2xl font-semibold">Thomas Anderson</h4>
+                            <h6 class="text-xs my-2 text-gray-500 tracking-wider">Change Management Consultant</h6>
+                            <p class="text-text-color">As the VP of People, Thomas’s focus lies in the development and optimization of talent retention.</p>
+                        </div>
+                    </div>
+                    <div class="rounded-xl overflow-hidden">
+                        <div class="overflow-hidden">
+                            <img src="../images/leadership4.jpg" alt="leadership" title="leadership" width="100%" class="duration-300 ease-linear hover:scale-110">
+                        </div>
+                        <div class="text-center bg-white p-8">
+                            <h4 class="text-theme text-2xl font-semibold">Legartha Mantana</h4>
+                            <h6 class="text-xs my-2 text-gray-500 tracking-wider">Brand Management Consultant</h6>
+                            <p class="text-text-color">As General Counsel of Elixir, Tony oversees global legal activities and policies across all aspects.</p>
+                        </div>
+                    </div>
+                    <div class="rounded-xl overflow-hidden">
+                        <div class="overflow-hidden">
+                            <img src="../images/leadership5.jpg" alt="leadership" title="leadership" width="100%" class="duration-300 ease-linear hover:scale-110">
+                        </div>
+                        <div class="text-center bg-white p-8">
+                            <h4 class="text-theme text-2xl font-semibold">John Snow</h4>
+                            <h6 class="text-xs my-2 text-gray-500 tracking-wider">Business Analyst</h6>
+                            <p class="text-text-color">John has overseen the meteoric growth while protecting scaling its uniquely creative and culture.</p>
+                        </div>
+                    </div>
+                    <div class="rounded-xl overflow-hidden">
+                        <div class="overflow-hidden">
+                            <img src="../images/leadership6.jpg" alt="leadership" title="leadership" width="100%" class="duration-300 ease-linear hover:scale-110">
+                        </div>
+                        <div class="text-center bg-white p-8">
+                            <h4 class="text-theme text-2xl font-semibold">Ragner Lothbrok</h4>
+                            <h6 class="text-xs my-2 text-gray-500 tracking-wider">Business Consultant</h6>
+                            <p class="text-text-color">Ragner, SVP of Engineering, oversees Elixir’s vast engineering organization which drives the core programming.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- counter -->
+        <section class="py-20 bg-[url('../images/counter.jpg')] w-full bg-cover bg-no-repeat bg-center relative -z-50 before:bg-gradient-to-t before:from-light-blue before:to-light-blue before:w-full before:h-full before:absolute before:top-0 before:left-0 before:-z-50 ">
+            <div class="container">
+                <div class="flex mb-10">
+                    <i class="ri-checkbox-circle-line text-6xl text-yello me-2"></i>
+                    <h2 class="text-5xl font-semibold text-yello leading-tight">Take the right step, <br/> <span class="text-white">do the big things.</span></h2>
+                </div>
+                <div class="grid lg:grid-cols-4 md:grid-cols-2 gap-5">
+                    <div class="text-center">
+                        <h2 class="text-4xl text-white font-bold mb-1 tracking-wide counter" data-speed="2000">52</h2>
+                        <p class="text-white font-semibold">Cases Solved</p>
+                    </div>
+                    <div class="text-center">
+                        <h2 class="text-4xl text-white font-bold mb-1 tracking-wide counter" data-speed="2000">164</h2>
+                        <p class="text-white font-semibold">Trained Experts</p>
+                    </div>
+                    <div class="text-center">
+                        <h2 class="text-4xl text-white font-bold mb-1 tracking-wide counter" data-speed="2000">38</h2>
+                        <p class="text-white font-semibold">Branches</p>
+                    </div>
+                    <div class="text-center">
+                        <h2 class="text-4xl text-white font-bold mb-1 tracking-wide counter" data-speed="2000">100</h2>
+                        <p class="text-white font-semibold">Satisfied Clients</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- testimonial -->
+        <section class="py-20">
+            <div class="container">
+                <div class="swiper testimonial">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="flex flex-wrap items-center">
+                                <div class="md:w-1/3 w-full">
+                                    <img src="../images/testimonial1.png" alt="testimonial" title="teatimonial" width="60%" class="rounded-xl mx-auto md:mb-0 mb-5">
+                                </div>
+                                <div class="md:w-2/3">
+                                    <div class="md:text-start text-center md:me-20">
+                                        <p class="text-xl text-text-color mb-10">Their work on our website and Internet marketing has made a significant different to our business. We’ve seen a 425% increase in quote requests from the website which has been pretty remarkable – but I’d always like to see more!</p>
+                                        <h5 class="text-theme font-bold text-lg">Michael Clarke</h5>
+                                        <p class="text-text-color">CEO, A.E.T Institute</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="flex flex-wrap items-center">
+                                <div class="md:w-1/3 w-full">
+                                    <img src="../images/testimonial2.png" alt="testimonial" title="teatimonial" width="60%" class="rounded-xl mx-auto md:mb-0 mb-5">
+                                </div>
+                                <div class="md:w-2/3">
+                                    <div class="md:text-start text-center md:me-20">
+                                        <p class="text-xl text-text-color mb-10">Their work on our website and Internet marketing has made a significant different to our business. We’ve seen a 425% increase in quote requests from the website which has been pretty remarkable – but I’d always like to see more!</p>
+                                        <h5 class="text-theme font-bold text-lg">Michael Clarke</h5>
+                                        <p class="text-text-color">CEO, A.E.T Institute</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="flex flex-wrap items-center">
+                                <div class="md:w-1/3 w-full">
+                                    <img src="../images/testimonial3.png" alt="testimonial" title="teatimonial" width="60%" class="rounded-xl mx-auto md:mb-0 mb-5">
+                                </div>
+                                <div class="md:w-2/3">
+                                    <div class="md:text-start text-center md:me-20">
+                                        <p class="text-xl text-text-color mb-10">Their work on our website and Internet marketing has made a significant different to our business. We’ve seen a 425% increase in quote requests from the website which has been pretty remarkable – but I’d always like to see more!</p>
+                                        <h5 class="text-theme font-bold text-lg">Michael Clarke</h5>
+                                        <p class="text-text-color">CEO, A.E.T Institute</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-button-next w-10 h-10 bg-white shadow-lg rounded-full after:text-[15px] after:content-['next']"></div>
+                    <div class="swiper-button-prev w-10 h-10 bg-white shadow-lg rounded-full after:text-[15px] after:content-['prev']"></div>
+                  </div>
+            </div>
+        </section>
+        <!-- clients  -->
+        <section class="py-20 bg-light-gray">
+            <div class="container">
+                <div class="grid lg:grid-cols-6 md:grid-cols-3 sm:grid-cols-2 gap-6">
+                    <div>
+                        <img src="../images/client1.png" alt="clients" title="clients" width="100%">
+                    </div>
+                    <div>
+                        <img src="../images/client2.png" alt="clients" title="clients" width="100%">
+                    </div>
+                    <div>
+                        <img src="../images/client3.png" alt="clients" title="clients" width="100%">
+                    </div>
+                    <div>
+                        <img src="../images/client4.png" alt="clients" title="clients" width="100%">
+                    </div>
+                    <div>
+                        <img src="../images/client5.png" alt="clients" title="clients" width="100%">
+                    </div>
+                    <div>
+                        <img src="../images/client6.png" alt="clients" title="clients" width="100%">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- news  -->
+        <section class="py-20 bg-slate-50">
+            <div class="container">
+                <div class="text-center relative pb-5 mb-20 before:content-[''] before:w-24 before:h-1 before:bg-theme before:absolute before:left-1/2 before:bottom-0 before:-translate-x-1/2">
+                    <h2 class="text-4xl font-bold text-theme">Latest News</h2>
+                </div>
+                <div class="grid lg:grid-cols-3 md:grid-cols-2 gap-5">
+                    <div class="rounded-xl overflow-hidden">
+                        <div class="overflow-hidden">
+                            <img src="../images/news1.jpg" alt="news" title="news" width="100%" class="duration-300 ease-linear hover:scale-110">
+                        </div>
+                        <div class="p-10 bg-white">
+                            <h3 class="text-theme text-2xl hover:underline font-semibold">Tax impacts of lease mean accounting change</h3>
+                            <h6 class="text-gray-400 my-2">By Paul O'Sullivan</h6>
+                            <p class="text-text-color py-2">HMRC released a consultation document to flag some potential tax impacts that a forthcoming change...</p>
+                            <a href="javascript:void(0)" class="tracking-wide text-theme font-semibold hover:underline">Learn More<i class="ri-arrow-right-line ms-2"></i></a>
+                        </div>
+                    </div>
+                    <div class="rounded-xl overflow-hidden">
+                        <div class="overflow-hidden">
+                            <img src="../images/news2.jpg" alt="news" title="news" width="100%" class="duration-300 ease-linear hover:scale-110">
+                        </div>
+                        <div class="p-10 bg-white">
+                            <h3 class="text-theme text-2xl hover:underline font-semibold">What brexit means for data protection law</h3>
+                            <h6 class="text-gray-400 my-2">By Enrico Ambrosi</h6>
+                            <p class="text-text-color py-2">Assuming that the referendum is not ignored completely, there are two possible futures for the UK...</p>
+                            <a href="javascript:void(0)" class="tracking-wide text-theme font-semibold hover:underline">Learn More<i class="ri-arrow-right-line ms-2"></i></a>
+                        </div>
+                    </div>
+                    <div class="rounded-xl overflow-hidden">
+                        <div class="overflow-hidden">
+                            <img src="../images/news3.jpg" alt="news" title="news" width="100%" class="duration-300 ease-linear hover:scale-110">
+                        </div>
+                        <div class="p-10 bg-white">
+                            <h3 class="text-theme text-2xl hover:underline font-semibold">The growing meanace of social engineering fraud</h3>
+                            <h6 class="text-gray-400 my-2">By Robson</h6>
+                            <p class="text-text-color py-2">Social engineering involves the collection of information from various sources about a target...</p>
+                            <a href="javascript:void(0)" class="tracking-wide text-theme font-semibold hover:underline">Learn More<i class="ri-arrow-right-line ms-2"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+     </main>
+    <!-- footer  -->
+    <footer class="py-20 bg-footer-bg">
+        <div class="container">
+            <div class="flex flex-wrap">
+                <div class="lg:w-5/12 w-full">
+                    <div class="bg-dark-blue p-10 border-2 border-yello rounded-xl text-white mb-10 lg:mb-0">
+                        <h3 class="text-2xl font-bold">Sign up for email alerts</h3>
+                        <p class="mb-5">Stay current with our latest insights</p>
+                        <form class="flex justify-between">
+                            <input type="text" placeholder="Enter email here" class="py-2 px-4 bg-transparent w-9/12 rounded-lg outline-none border-2 border-gray-600 focus:border-2 focus:border-yello">
+                            <button class="py-2 px-6 ms-2 bg-yello rounded-lg text-black text-sm font-semibold border border-yello duration-300 hover:bg-transparent hover:text-white">Submit</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="lg:w-7/12 w-full">
+                    <div class="grid grid-cols-2">
+                        <div class="lg:ms-16">
+                            <ul>
+                                <li class="mb-2"><a href="javacsript:void(0)" class="text-white font-semibold hover:text-gray-400">Contact Us</a></li>
+                                <li class="mb-2"><a href="javacsript:void(0)" class="text-white font-semibold hover:text-gray-400">FAQ</a></li>
+                                <li class="mb-2"><a href="javacsript:void(0)" class="text-white font-semibold hover:text-gray-400">Privacy Policy</a></li>
+                                <li class="mb-2"><a href="javacsript:void(0)" class="text-white font-semibold hover:text-gray-400">Terms of Use</a></li>
+                                <li class="mb-2"><a href="javacsript:void(0)" class="text-white font-semibold hover:text-gray-400">Global Office</a></li>
+                                <li class="mb-2"><a href="javacsript:void(0)" class="text-white font-semibold hover:text-gray-400">Local Office</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <ul>
+                                <li class="mb-2"><i class="ri-linkedin-fill inline-block w-10 h-10 rounded leading-10 text-center font-2xl bg-dark-blue text-white"></i><a href="javascript:void(0)" class="text-white font-semibold ms-3 hover:text-gray-400">Linkedin</a></li>
+                                <li class="mb-2"><i class="ri-twitter-fill inline-block w-10 h-10 rounded leading-10 text-center font-2xl bg-dark-blue text-white"></i><a href="javascript:void(0)" class="text-white font-semibold ms-3 hover:text-gray-400">Twitter</a></li>
+                                <li class="mb-2"><i class="ri-facebook-fill inline-block w-10 h-10 rounded leading-10 text-center font-2xl bg-dark-blue text-white"></i><a href="javascript:void(0)" class="text-white font-semibold ms-3 hover:text-gray-400">Facebook</a></li>
+                                <li class="mb-2"><i class="ri-google-fill inline-block w-10 h-10 rounded leading-10 text-center font-2xl bg-dark-blue text-white"></i><a href="javascript:void(0)" class="text-white font-semibold ms-3 hover:text-gray-400">Google+</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- copiright link -->
+    <div class=" bg-dark-blue py-10">
+        <div class="container">
+            <div class="grid md:grid-cols-3 sm:grid-cols-2 gap-4">
+                <div class="text-white font-semibold">
+                    <a href="javascript:void(0)"><img src="../images/logo-light.png" alt="footer-logo" title="footer-logo"></a>
+                </div>
+                <div class="text-white font-semibold">
+                    <p>© Copyright 2021 <a href="javascript:void(0)" class="hover:text-gray-400">Elixir Inc.</a></p>
+                </div>
+                <div class="text-white font-semibold">
+                    <p>Designed by <a href="javascript:void(0)" class="hover:text-gray-400">Themewagon</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- back to top  -->
+    <div class="w-10 h-10 text-center leading-10 text-theme bg-yello rounded-lg text-2xl fixed right-6 bottom-6 z-40 hidden" id="back-to-top">
+        <i class="ri-corner-right-up-fill"></i>
+    </div>
+
+     <!-- main jquery cdn  -->
+     <script src="../dist/js/jquery.min.js" type="text/javascript"></script>
+     <!-- swiper slider  -->
+     <script src="../dist/js/swiper-bundle.min.js" type="text/javascript"></script>
+     <script>
+        $(document).ready(function(){
+            $('#toggle').click(function(){
+                $('nav ul').slideToggle();
+            });
+            $('#back-to-top').click(function(){
+                $('html').animate({scrollTop:0});
+            });
+        });
+
+        $(window).scroll(function(){
+            if($(this).scrollTop() > 60){
+                $('#back-to-top').fadeIn();
+            }
+            else{
+                $('#back-to-top').fadeOut();
+            }
+        });
+
+        $(window).on('load',function(){
+            $('#loader').fadeOut(2000);
+            $('html').animate({scrollTop:0});
+        });
+
+        // slider 
+        var swiper = new Swiper(".mySwiper", {
+            autoplay:true,
+            effect: "fade",
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+        });
+        var swiper = new Swiper(".testimonial", {
+            autoplay:true,
+            loop:true,
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+        });
+        // counetr 
+        (() => {
+            const counter = document.querySelectorAll('.counter');
+            // covert to array
+            const array = Array.from(counter);
+            // select array element
+            array.map((item) => {
+                // data layer
+                let counterInnerText = item.textContent;
+
+                let count = 1;
+                let speed = item.dataset.speed / counterInnerText
+                function counterUp() {
+                    item.textContent = count++
+                    if (counterInnerText < count) {
+                        clearInterval(stop);
+                    }
+                }
+                const stop = setInterval(() => {
+                    counterUp();
+                }, speed);
+            })
+        })()
+
+
+     </script>
+</body>
+</html>
