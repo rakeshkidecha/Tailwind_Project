@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courses | Education</title>
+    <style>
+        a{
+            display: inline-block;
+        }
+        header.active{
+            background: linear-gradient(#AE59FF,#4255A4);
+            transform: translateY(0%);
+            animation: move 0.3s linear;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        }
+        @keyframes move{
+            0%{
+                transform: translateY(-100%);
+            }
+            100%{
+                transform: translateY(0%);
+            }
+        }
+        .slick-list{
+            padding: 10px 0 !important;
+        }
+        .slick-prev {
+            left: -35px !important;
+        }
+        .slick-next {
+            right: -35px !important;
+        }
+        .slick-prev:before, .slick-next:before{
+            content: '‹' !important;
+            color: #AE59FF !important;
+            font-size: 55px !important;
+        }
+        .slick-next:before{
+            content: '›' !important;
+        }
+        .slick-dots li.slick-active button:before{
+            background-color: #AE59FF !important;
+        }
+        .slick-dots li button::before{
+            width: 10px !important;
+            height: 10px !important;
+            border: 2px solid #AE59FF !important;
+            color: transparent !important;
+            border-radius: 50% !important;
+        }
+        .slick-dots{
+            bottom: -50px !important;
+        }
+        .slick-dots li button:hover::before{
+            background-color: #AE59FF !important;
+        }
+    </style>
+    <!-- favicon  -->
+    <link rel="icon" href="../images/favicon.ico" type="icon">
+    <!-- remixicon  -->
+    <link rel="stylesheet" href="../remix/remixicon.css" type="text/css">
+    <!-- font family -->
+    <link rel="stylesheet" href="../fonts/JosefinSans/stylesheet.css" type="text/css">
+    <link rel="stylesheet" href="../fonts/mulish/stylesheet.css" type="text/css">
+    <!-- slick-slider  -->
+    <link rel="stylesheet" href="css/slick.css" type="text/css">
+    <link rel="stylesheet" href="css/slick-theme.css" type="text/css">
+    <!-- main css  -->
+    <link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body class="font-mulish">
+
+    <!-- header -->
+    <header class="fixed top-0 left-0 w-full z-40">
+        <div class="container">
+            <div class="flex justify-between items-center relative py-6">
+                <a href="javascript:void(0)"><img src="../images/logo.png" alt="logo" title="logo"></a>
+                <nav class="flex items-center">
+                    <ul class="lg:flex lg:static lg:bg-transparent hidden py-4 px-5 absolute bg-dark-theme top-full left-0 w-full">
+                        <li><a href="javascript:void(0)" class="text-black lg:text-white mb-2 lg:mb-0 me-10 font-semibold ease-linear duration-300 hover:text-light-orange">Home</a></li>
+                        <li><a href="javascript:void(0)" class="text-black lg:text-white mb-2 lg:mb-0 me-10 font-semibold ease-linear duration-300 hover:text-light-orange">Courses</a></li>
+                        <li><a href="javascript:void(0)" class="text-black lg:text-white mb-2 lg:mb-0 me-10 font-semibold ease-linear duration-300 hover:text-light-orange">About</a></li>
+                        <li class="group/item relative">
+                            <a href="javascript:void(0)" class="text-black lg:text-white mb-2 lg:mb-0 me-10 font-semibold ease-linear duration-300 hover:text-light-orange">Blog</a>
+                            <ul class="p-5 bg-white absolute top-full left-0 translate-y-5 invisible duration-300 ease-linear group-hover/item:visible group-hover/item:translate-y-7">
+                                <li><a href="javascript:void(0)" class="whitespace-nowrap my-1">Blog</a></li>
+                                <li><a href="javascript:void(0)" class="whitespace-nowrap my-1">Blog Details</a></li>
+                                <li><a href="javascript:void(0)" class="whitespace-nowrap my-1">Element</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="javascript:void(0)" class="text-black lg:text-white mb-2 lg:mb-0 me-10 font-semibold ease-linear duration-300 hover:text-light-orange">Contact</a></li>
+                    </ul>
+                    <div class="flex items-center">
+                        <a href="javascript:void(0)" class="text-white font-JosefinSans tracking-wide font-semibold text-nowrap py-3 px-8 z-10 border-light-orange bg-light-orange rounded relative before:content[''] before:w-0 before:h-full before:bg-theme before:absolute before:top-0 before:left-0 before:rounded before:-z-10 hover:before:w-full before:ease-linear-bounce before:duration-300">Join</a>
+                        <a href="login.html" class="ms-2 text-white font-JosefinSans tracking-wide font-semibold text-nowrap py-3 px-8 z-10 border border-white rounded relative before:content[''] before:w-0 before:h-full before:bg-light-orange before:absolute before:top-0 before:left-0 before:rounded before:-z-10 hover:border-transparent hover:before:w-full before:ease-linear-bounce before:duration-300">Log In</a>
+                        <i class="ri-menu-line text-white text-3xl ms-2 lg:hidden" id="toggle"></i>
+                    </div>
+                </nav>
+            </div>  
+        </div>
+    </header>
+
+    <!-- loader -->
+    <div id="loader" class="w-full h-screen fixed top-0 left-0 bg-white z-50 flex items-center justify-center">
+        <div class="w-24 h-24 bg-white rounded-full flex items-center justify-center shadow-loader relative before:w-full before:h-full before:border-t-2 before:border-2 before:border-t-dark-theme before:absolute before:top-0 before:left-0 before:rounded-full before:animate-spin">
+            <img src="../images/loder.png" alt="loder" title="loder">
+        </div>
+    </div>
+
+    <main>
+        <!-- banner  -->
+        <section class="bg-[url('../images/banner.png')] w-full h-800 bg-no-repeat bg-center bg-cover relative">
+            <div class="w-full h-full flex items-center">
+                <div class="container">
+                    <h1 class="text-6xl leading-tight font-bold text-white font-JosefinSans">Online learning <br/> platform</h1>
+                    <p class="text-white text-lg py-6">Build skills with courses, certificates, and degrees online from world- <br/> class universities and companies</p>
+                    <a href="javascript:void(0)" class="text-white font-JosefinSans tracking-wide font-semibold py-3 px-8 z-10 border-light-orange bg-light-orange rounded relative before:content[''] before:w-0 before:h-full before:bg-theme before:absolute before:top-0 before:left-0 before:rounded before:-z-10 hover:before:w-full before:ease-linear-bounce before:duration-300">Join For Free</a>
+                </div>
+            </div>
+        </section>
+        <!-- services  -->
+        <section class="-translate-y-16">
+            <div class="container">
+                <div class="grid lg:grid-cols-3 gap-5">
+                    <div class="flex p-6 rounded-xl bg-white shadow-lg">
+                        <img src="../images/services1.svg" alt="services" title="services">
+                        <div class="ms-3">
+                            <h3 class="text-xl text-light-theme font-bold font-JosefinSans">60+ UX courses</h3>
+                            <p class="text-light-theme text-lg leading-6 mt-2">The automated process all your website tasks.</p>
+                        </div>
+                    </div>
+                    <div class="flex p-6 rounded-xl bg-white shadow-lg">
+                        <img src="../images/services2.svg" alt="services" title="services">
+                        <div class="ms-3">
+                            <h3 class="text-xl text-light-theme font-bold font-JosefinSans">Expert instructors</h3>
+                            <p class="text-light-theme text-lg leading-6 mt-2">The automated process all your website tasks.</p>
+                        </div>
+                    </div>
+                    <div class="flex p-6 rounded-xl bg-white shadow-lg">
+                        <img src="../images/services3.svg" alt="services" title="services">
+                        <div class="ms-3">
+                            <h3 class="text-xl text-light-theme font-bold font-JosefinSans">Life time access</h3>
+                            <p class="text-light-theme text-lg leading-6 mt-2">The automated process all your website tasks.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- feature -->
+        <section class="pb-20 pt-5">
+            <div class="container">
+                <div class="text-light-theme text-45 text-center font-semibold mb-10">
+                    <h2 class="font-JosefinSans">Our featured courses</h2>
+                </div>
+                <div class="responsive">
+                    <div class="shadow-custom-shadow rounded-lg mx-3">
+                        <div>
+                            <img src="../images/featured1.png" alt="feature" title="feature" width="100%">
+                        </div>
+                        <div class="p-5">
+                            <h4 class="text-extra-light-theme text-lg">User Experience</h4>
+                            <h3 class="text-light-theme text-xl font-semibold font-JosefinSans my-2">Fundamental of UX for Application design</h3>
+                            <p class="text-extra-light-theme">The automated process all your website tasks. Discover tools and techniques to engage effectively with vulnerable children and young people</p>
+                            <div class="flex justify-between items-end my-2">
+                                <div>
+                                    <div class="text-light-orange text-xl">
+                                        <i class="ri-star-s-fill"></i>
+                                        <i class="ri-star-s-fill"></i>
+                                        <i class="ri-star-s-fill"></i>
+                                        <i class="ri-star-s-fill"></i>
+                                        <i class="ri-star-half-s-fill"></i>
+                                    </div>
+                                    <p class="text-extra-light-theme"><span class="text-light-orange">(4.5)</span> based on 120</p>
+                                </div>
+                                <h2 class="text-2xl text-light-theme font-semibold">$135</h2>
+                            </div>
+                            <a href="javascript:void(0)" class="mt-2 text-light-theme tracking-wide font-semibold py-3 px-8 w-full text-center border border-gray-200 rounded relative before:content[''] before:w-full before:h-0 before:bg-light-orange before:absolute before:top-0 before:left-0 before:rounded before:-z-10 hover:text-white hover:border-transparent hover:before:h-full before:ease-linear-bounce before:duration-300">Find Out More</a>
+                        </div>
+                    </div>
+                    <div class="shadow-custom-shadow rounded-lg mx-3">
+                        <div>
+                            <img src="../images/featured2.png" alt="feature" title="feature" width="100%">
+                        </div>
+                        <div class="p-5">
+                            <h4 class="text-extra-light-theme text-lg">User Experience</h4>
+                            <h3 class="text-light-theme text-xl font-semibold font-JosefinSans my-2">Fundamental of UX for Application design</h3>
+                            <p class="text-extra-light-theme">The automated process all your website tasks. Discover tools and techniques to engage effectively with vulnerable children and young people</p>
+                            <div class="flex justify-between items-end my-2">
+                                <div>
+                                    <div class="text-light-orange text-xl">
+                                        <i class="ri-star-s-fill"></i>
+                                        <i class="ri-star-s-fill"></i>
+                                        <i class="ri-star-s-fill"></i>
+                                        <i class="ri-star-s-fill"></i>
+                                        <i class="ri-star-half-s-fill"></i>
+                                    </div>
+                                    <p class="text-extra-light-theme"><span class="text-light-orange">(4.5)</span> based on 120</p>
+                                </div>
+                                <h2 class="text-2xl text-light-theme font-semibold">$135</h2>
+                            </div>
+                            <a href="javascript:void(0)" class="mt-2 text-light-theme tracking-wide font-semibold py-3 px-8 w-full text-center border border-gray-200 rounded relative before:content[''] before:w-full before:h-0 before:bg-light-orange before:absolute before:top-0 before:left-0 before:rounded before:-z-10 hover:text-white hover:border-transparent hover:before:h-full before:ease-linear-bounce before:duration-300">Find Out More</a>
+                        </div>
+                    </div>
+                    <div class="shadow-custom-shadow rounded-lg mx-3">
+                        <div>
+                            <img src="../images/featured3.png" alt="feature" title="feature" width="100%">
+                        </div>
+                        <div class="p-5">
+                            <h4 class="text-extra-light-theme text-lg">User Experience</h4>
+                            <h3 class="text-light-theme text-xl font-semibold font-JosefinSans my-2">Fundamental of UX for Application design</h3>
+                            <p class="text-extra-light-theme">The automated process all your website tasks. Discover tools and techniques to engage effectively with vulnerable children and young people</p>
+                            <div class="flex justify-between items-end my-2">
+                                <div>
+                                    <div class="text-light-orange text-xl">
+                                        <i class="ri-star-s-fill"></i>
+                                        <i class="ri-star-s-fill"></i>
+                                        <i class="ri-star-s-fill"></i>
+                                        <i class="ri-star-s-fill"></i>
+                                        <i class="ri-star-half-s-fill"></i>
+                                    </div>
+                                    <p class="text-extra-light-theme"><span class="text-light-orange">(4.5)</span> based on 120</p>
+                                </div>
+                                <h2 class="text-2xl text-light-theme font-semibold">$135</h2>
+                            </div>
+                            <a href="javascript:void(0)" class="mt-2 text-light-theme tracking-wide font-semibold py-3 px-8 w-full text-center border border-gray-200 rounded relative before:content[''] before:w-full before:h-0 before:bg-light-orange before:absolute before:top-0 before:left-0 before:rounded before:-z-10 hover:text-white hover:border-transparent hover:before:h-full before:ease-linear-bounce before:duration-300">Find Out More</a>
+                        </div>
+                    </div>
+                    <div class="shadow-custom-shadow rounded-lg mx-3">
+                        <div>
+                            <img src="../images/featured1.png" alt="feature" title="feature" width="100%">
+                        </div>
+                        <div class="p-5">
+                            <h4 class="text-extra-light-theme text-lg">User Experience</h4>
+                            <h3 class="text-light-theme text-xl font-semibold font-JosefinSans my-2">Fundamental of UX for Application design</h3>
+                            <p class="text-extra-light-theme">The automated process all your website tasks. Discover tools and techniques to engage effectively with vulnerable children and young people</p>
+                            <div class="flex justify-between items-end my-2">
+                                <div>
+                                    <div class="text-light-orange text-xl">
+                                        <i class="ri-star-s-fill"></i>
+                                        <i class="ri-star-s-fill"></i>
+                                        <i class="ri-star-s-fill"></i>
+                                        <i class="ri-star-s-fill"></i>
+                                        <i class="ri-star-half-s-fill"></i>
+                                    </div>
+                                    <p class="text-extra-light-theme"><span class="text-light-orange">(4.5)</span> based on 120</p>
+                                </div>
+                                <h2 class="text-2xl text-light-theme font-semibold">$135</h2>
+                            </div>
+                            <a href="javascript:void(0)" class="mt-2 text-light-theme tracking-wide font-semibold py-3 px-8 w-full text-center border border-gray-200 rounded relative before:content[''] before:w-full before:h-0 before:bg-light-orange before:absolute before:top-0 before:left-0 before:rounded before:-z-10 hover:text-white hover:border-transparent hover:before:h-full before:ease-linear-bounce before:duration-300">Find Out More</a>
+                        </div>
+                    </div>
+                    <div class="shadow-custom-shadow rounded-lg mx-3">
+                        <div>
+                            <img src="../images/featured2.png" alt="feature" title="feature" width="100%">
+                        </div>
+                        <div class="p-5">
+                            <h4 class="text-extra-light-theme text-lg">User Experience</h4>
+                            <h3 class="text-light-theme text-xl font-semibold font-JosefinSans my-2">Fundamental of UX for Application design</h3>
+                            <p class="text-extra-light-theme">The automated process all your website tasks. Discover tools and techniques to engage effectively with vulnerable children and young people</p>
+                            <div class="flex justify-between items-end my-2">
+                                <div>
+                                    <div class="text-light-orange text-xl">
+                                        <i class="ri-star-s-fill"></i>
+                                        <i class="ri-star-s-fill"></i>
+                                        <i class="ri-star-s-fill"></i>
+                                        <i class="ri-star-s-fill"></i>
+                                        <i class="ri-star-half-s-fill"></i>
+                                    </div>
+                                    <p class="text-extra-light-theme"><span class="text-light-orange">(4.5)</span> based on 120</p>
+                                </div>
+                                <h2 class="text-2xl text-light-theme font-semibold">$135</h2>
+                            </div>
+                            <a href="javascript:void(0)" class="mt-2 text-light-theme tracking-wide font-semibold py-3 px-8 w-full text-center border border-gray-200 rounded relative before:content[''] before:w-full before:h-0 before:bg-light-orange before:absolute before:top-0 before:left-0 before:rounded before:-z-10 hover:text-white hover:border-transparent hover:before:h-full before:ease-linear-bounce before:duration-300">Find Out More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Learn -->
+        <section class="py-20">
+            <div class="container">
+                <div class="grid lg:grid-cols-2 gap-10">
+                    <div>
+                        <div class="w-20 h-20 rounded-full bg-gradient-to-b from-gradion-1 to-gradion-2 flex items-center justify-center">
+                            <img src="../images/about.svg" alt="about-icon" title="about-icon">
+                        </div>
+                        <h2 class="text-light-theme text-45 font-semibold font-JosefinSans leading-tight my-5">Learn new skills online with top educators</h2>
+                        <p class="mt-4 mb-14 text-extra-light-theme">The automated process all your website tasks. Discover tools and techniques to engage effectively with vulnerable children and young people.</p>
+                        <ul>
+                            <li class="flex mb-3"><i class="ri-check-fill text-light-orange text-2xl"></i><span class="text-extra-light-theme ms-2">Techniques to engage effectively with vulnerable children and young people.</span></li>
+                            <li class="flex mb-3"><i class="ri-check-fill text-light-orange text-2xl"></i><span class="text-extra-light-theme ms-2">Join millions of people from around the world learning together. </span></li>
+                            <li class="flex mb-3"><i class="ri-check-fill text-light-orange text-2xl"></i><span class="text-extra-light-theme ms-2">Join millions of people from around the world learning together. Online learning is as easy and natural.</span></li>
+                        </ul>
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <a href="javascript:void(0)" class="w-16 h-16 rounded-full bg-light-orange flex items-center justify-center text-white text-2xl"><i class="ri-play-large-fill"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- subjects -->
+        <section class="py-20">
+            <div class="container">
+                <div class="text-light-theme text-45 text-center font-semibold mb-10">
+                    <h2 class="font-JosefinSans">Explore top subjects</h2>
+                </div>
+                <div class="grid lg:grid-cols-4 md:grid-cols-2 gap-5">
+                    <div class="relative group/item rounded-xl overflow-hidden before:content-[''] before:w-full before:h-full before:bg-light-theme before:bg-opacity-70 before:absolute before:top-0 before:left-0 before:opacity-0 before:duration-300 before:ease-linear hover:before:opacity-100 ">
+                        <img src="../images/topic1.png" alt="subject" title="subject" width="100%">
+                        <p class="text-white font-bold text-2xl absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">PROGRAMING</p>
+                    </div>
+                    <div class="relative group/item rounded-xl overflow-hidden before:content-[''] before:w-full before:h-full before:bg-light-theme before:bg-opacity-70 before:absolute before:top-0 before:left-0 before:opacity-0 before:duration-300 before:ease-linear hover:before:opacity-100 ">
+                        <img src="../images/topic2.png" alt="subject" title="subject" width="100%">
+                        <p class="text-white font-bold text-2xl absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">PROGRAMING</p>
+                    </div>
+                    <div class="relative group/item rounded-xl overflow-hidden before:content-[''] before:w-full before:h-full before:bg-light-theme before:bg-opacity-70 before:absolute before:top-0 before:left-0 before:opacity-0 before:duration-300 before:ease-linear hover:before:opacity-100 ">
+                        <img src="../images/topic3.png" alt="subject" title="subject" width="100%">
+                        <p class="text-white font-bold text-2xl absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">PROGRAMING</p>
+                    </div>
+                    <div class="relative group/item rounded-xl overflow-hidden before:content-[''] before:w-full before:h-full before:bg-light-theme before:bg-opacity-70 before:absolute before:top-0 before:left-0 before:opacity-0 before:duration-300 before:ease-linear hover:before:opacity-100 ">
+                        <img src="../images/topic4.png" alt="subject" title="subject" width="100%">
+                        <p class="text-white font-bold text-2xl absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">PROGRAMING</p>
+                    </div>
+                    <div class="relative group/item rounded-xl overflow-hidden before:content-[''] before:w-full before:h-full before:bg-light-theme before:bg-opacity-70 before:absolute before:top-0 before:left-0 before:opacity-0 before:duration-300 before:ease-linear hover:before:opacity-100 ">
+                        <img src="../images/topic5.png" alt="subject" title="subject" width="100%">
+                        <p class="text-white font-bold text-2xl absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">PROGRAMING</p>
+                    </div>
+                    <div class="relative group/item rounded-xl overflow-hidden before:content-[''] before:w-full before:h-full before:bg-light-theme before:bg-opacity-70 before:absolute before:top-0 before:left-0 before:opacity-0 before:duration-300 before:ease-linear hover:before:opacity-100 ">
+                        <img src="../images/topic6.png" alt="subject" title="subject" width="100%">
+                        <p class="text-white font-bold text-2xl absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">PROGRAMING</p>
+                    </div>
+                    <div class="relative group/item rounded-xl overflow-hidden before:content-[''] before:w-full before:h-full before:bg-light-theme before:bg-opacity-70 before:absolute before:top-0 before:left-0 before:opacity-0 before:duration-300 before:ease-linear hover:before:opacity-100 ">
+                        <img src="../images/topic7.png" alt="subject" title="subject" width="100%">
+                        <p class="text-white font-bold text-2xl absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">PROGRAMING</p>
+                    </div>
+                    <div class="relative group/item rounded-xl overflow-hidden before:content-[''] before:w-full before:h-full before:bg-light-theme before:bg-opacity-70 before:absolute before:top-0 before:left-0 before:opacity-0 before:duration-300 before:ease-linear hover:before:opacity-100 ">
+                        <img src="../images/topic8.png" alt="subject" title="subject" width="100%">
+                        <p class="text-white font-bold text-2xl absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">PROGRAMING</p>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <a href="javascript:void(0)" class="mt-14 text-light-orange tracking-wide font-semibold py-3 px-8 text-center border border-light-orange rounded relative before:content[''] before:w-full before:h-0 before:bg-light-orange before:absolute before:top-0 before:left-0 before:rounded before:-z-10 hover:text-white hover:border-transparent hover:before:h-full before:ease-linear-bounce before:duration-300">View More Subjects</a>
+                </div>
+            </div>
+        </section>
+        <!-- about-courses -->
+        <section class="py-20">
+            <div class="container">
+                <div class="grid lg:grid-cols-2 gap-5 items-center">
+                    <div>
+                        <img src="../images/courses.png" alt="courses" title="courses" width="100%">
+                    </div>
+                    <div class="p-5 pe-32">
+                        <h2 class="text-light-theme text-45 font-semibold font-JosefinSans leading-tight my-5">Learner outcomes on courses you will take</h2>
+                        <ul>
+                            <li class="flex mb-3"><i class="ri-check-fill text-light-orange text-2xl"></i><span class="text-extra-light-theme ms-2">Techniques to engage effectively with vulnerable children and young people.</span></li>
+                            <li class="flex mb-3"><i class="ri-check-fill text-light-orange text-2xl"></i><span class="text-extra-light-theme ms-2">Join millions of people from around the world learning together. </span></li>
+                            <li class="flex mb-3"><i class="ri-check-fill text-light-orange text-2xl"></i><span class="text-extra-light-theme ms-2">Join millions of people from around the world learning together. Online learning is as easy and natural.</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- team  -->
+        <section class="py-20"> 
+            <div class="container">
+                <div class="text-light-theme text-45 text-center font-semibold mb-10">
+                    <h2 class="font-JosefinSans">Community experts</h2>
+                </div>
+                <div class="team">
+                    <div class="text-center m-3">
+                        <img src="../images/team1.png" alt="team" title="team" style="display: inline;">
+                        <div class="text-center">
+                            <h2 class="text-light-theme font-semibold text-2xl mb-2">Mr. Urela</h2>
+                            <p class="text-extra-light-theme">The automated process all your website tasks.</p>
+                        </div>
+                    </div>
+                    <div class="text-center m-3">
+                        <img src="../images/team2.png" alt="team" title="team" style="display: inline;">
+                        <div class="text-center">
+                            <h2 class="text-light-theme font-semibold text-2xl mb-2">Mr. Uttom</h2>
+                            <p class="text-extra-light-theme">The automated process all your website tasks.</p>
+                        </div>
+                    </div>
+                    <div class="text-center m-3">
+                        <img src="../images/team3.png" alt="team" title="team" style="display: inline;">
+                        <div class="text-center">
+                            <h2 class="text-light-theme font-semibold text-2xl mb-2">Mr. Saiful</h2>
+                            <p class="text-extra-light-theme">The automated process all your website tasks.</p>
+                        </div>
+                    </div>
+                    <div class="text-center m-3">
+                        <img src="../images/team4.png" alt="team" title="team" style="display: inline;">
+                        <div class="text-center">
+                            <h2 class="text-light-theme font-semibold text-2xl mb-2">Mr. Arafat</h2>
+                            <p class="text-extra-light-theme">The automated process all your website tasks.</p>
+                        </div>
+                    </div>
+                    <div class="text-center m-3">
+                        <img src="../images/team1.png" alt="team" title="team" style="display: inline;">
+                        <div class="text-center">
+                            <h2 class="text-light-theme font-semibold text-2xl mb-2">Mr. Urela</h2>
+                            <p class="text-extra-light-theme">The automated process all your website tasks.</p>
+                        </div>
+                    </div>
+                    <div class="text-center m-3">
+                        <img src="../images/team2.png" alt="team" title="team" style="display: inline;">
+                        <div class="text-center">
+                            <h2 class="text-light-theme font-semibold text-2xl mb-2">Mr. Uttom</h2>
+                            <p class="text-extra-light-theme">The automated process all your website tasks.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- goal -->
+        <section class="py-20">
+            <div class="container">
+                <div class="grid lg:grid-cols-2 gap-5 items-center">
+                    <div class="rounded-xl overflow-hidden">
+                        <img src="../images/goal.png" alt="goal" title="goal" width="100%" class="hover:scale-110 duration-300">
+                    </div>
+                    <div class="lg:px-10">
+                        <h2 class="text-light-theme text-45 font-semibold font-JosefinSans leading-tight my-5 pe-10">Take the next step toward your personal and professional goals with us.</h2>
+                        <p class="text-extra-light-theme leading-6 mb-5">The automated process all your website tasks. Discover tools and techniques to engage effectively with vulnerable children and young people.</p>
+                        <a href="javascript:void(0)" class="text-white font-JosefinSans tracking-wide font-semibold py-3 px-8 z-10 border-light-orange bg-light-orange rounded relative before:content[''] before:w-0 before:h-full before:bg-theme before:absolute before:top-0 before:left-0 before:rounded before:-z-10 hover:before:w-full before:ease-linear-bounce before:duration-300">Join Now For Free</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- footer  -->
+    <footer class="bg-light-theme py-20">
+        <div class="container">
+            <div class="grid lg:grid-cols-4 md:grid-cols-2 gap-5">
+                <div>
+                    <img src="../images/logo2_footer.png" alt="footer-logo" title="footer-logo">
+                    <p class="text-white my-8 leading-7">The automated process starts as soon as your clothes go into the machine.</p>
+                    <div>
+                        <a href="javascript:void(0)"><i class="ri-twitter-fill w-10 h-10 bg-slate-900 bg-opacity-10 inline-block rounded-full text-white text-center leading-10 me-2 duration-300 ease-linear hover:bg-dark-theme"></i></a>
+                        <a href="javascript:void(0)"><i class="ri-facebook-fill w-10 h-10 bg-slate-900 bg-opacity-10 inline-block rounded-full text-white text-center leading-10 me-2 duration-300 ease-linear hover:bg-dark-theme"></i></a>
+                        <a href="javascript:void(0)"><i class="ri-pinterest-fill w-10 h-10 bg-slate-900 bg-opacity-10 inline-block rounded-full text-white text-center leading-10 me-2 duration-300 ease-linear hover:bg-dark-theme"></i></a>
+                    </div>
+                </div>
+                <div class="md:ps-16">
+                    <h3 class="text-2xl font-semibold mb-4 text-white">Our solutions</h3>
+                    <ul>
+                        <li><a href="javascript:void(0)" class="text-white my-1 ease-linear duration-200 hover:text-dark-theme">Design & creatives</a></li>
+                        <li><a href="javascript:void(0)" class="text-white my-1 ease-linear duration-200 hover:text-dark-theme">Telecommunication</a></li>
+                        <li><a href="javascript:void(0)" class="text-white my-1 ease-linear duration-200 hover:text-dark-theme">Restaurant</a></li>
+                        <li><a href="javascript:void(0)" class="text-white my-1 ease-linear duration-200 hover:text-dark-theme">Programing</a></li>
+                        <li><a href="javascript:void(0)" class="text-white my-1 ease-linear duration-200 hover:text-dark-theme">Architecture</a></li>
+                    </ul>
+                </div>
+                <div class="lg:ps-16">
+                    <h3 class="text-2xl font-semibold mb-4 text-white">Support</h3>
+                    <ul>
+                        <li><a href="javascript:void(0)" class="text-white my-1 ease-linear duration-200 hover:text-dark-theme">Design & creatives</a></li>
+                        <li><a href="javascript:void(0)" class="text-white my-1 ease-linear duration-200 hover:text-dark-theme">Telecommunication</a></li>
+                        <li><a href="javascript:void(0)" class="text-white my-1 ease-linear duration-200 hover:text-dark-theme">Restaurant</a></li>
+                        <li><a href="javascript:void(0)" class="text-white my-1 ease-linear duration-200 hover:text-dark-theme">Programing</a></li>
+                        <li><a href="javascript:void(0)" class="text-white my-1 ease-linear duration-200 hover:text-dark-theme">Architecture</a></li>
+                    </ul>
+                </div>
+                <div class="md:ps-16">
+                    <h3 class="text-2xl font-semibold mb-4 text-white">Company</h3>
+                    <ul>
+                        <li><a href="javascript:void(0)" class="text-white my-1 ease-linear duration-200 hover:text-dark-theme">Design & creatives</a></li>
+                        <li><a href="javascript:void(0)" class="text-white my-1 ease-linear duration-200 hover:text-dark-theme">Telecommunication</a></li>
+                        <li><a href="javascript:void(0)" class="text-white my-1 ease-linear duration-200 hover:text-dark-theme">Restaurant</a></li>
+                        <li><a href="javascript:void(0)" class="text-white my-1 ease-linear duration-200 hover:text-dark-theme">Programing</a></li>
+                        <li><a href="javascript:void(0)" class="text-white my-1 ease-linear duration-200 hover:text-dark-theme">Architecture</a></li>
+                    </ul>
+                </div>
+            </div>
+            <p class="text-white text-lg text-center mt-20">Copyright ©2024 All rights reserved | This template is made with 💜 by <a href="javascript:void(0)" class="ease-linear duration-200 hover:text-dark-theme">Colorlib</a></p>
+        </div>
+    </footer>
+    <!-- back-to-top  -->
+    <div id="back-to-top" class="w-14 h-14 hidden leading-[56px] text-center bg-dark-theme text-white text-2xl shadow-md rounded-full hover:bg-theme fixed bottom-6 right-6">
+        <i class="ri-corner-right-up-fill"></i>
+    </div>
+
+    
+
+    <!-- j-Query-cdn  -->
+     <script src="js/jquery.min.js" type="text/javascript"></script>
+    <!-- slick-slider -->
+    <script src="js/slick.min.js" type="text/javascript"></script>
+    <script>
+        $(document).ready(function(){
+            $('#toggle').click(function(){
+                $('nav ul').slideToggle();
+            });
+            $('#back-to-top').click(function(){
+                $('html').animate({scrollTop:0});
+            });
+        });
+
+        $(window).scroll(function(){
+            if($(this).scrollTop()>60){
+                $('header').addClass('active');
+                $('#back-to-top').fadeIn();
+            }
+            else{
+                $('header').removeClass('active');
+                $('#back-to-top').fadeOut();
+            }
+        });
+
+        $(window).on('load',function(){
+            $('html').animate({scrollTop:0});
+            $('#loader').fadeOut(2500);
+        });
+
+        // feature 
+        $('.responsive').slick({
+            dots: false,
+            arrows:true,
+            infinite: true,
+            speed: 300,
+            slidesToShow: 3,
+            slidesToScroll: 1,
+            responsive: [
+                {
+                breakpoint: 1000,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 1,
+                    infinite: true,
+                }
+                },
+                {
+                breakpoint: 800,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 1,
+                    infinite: true,
+                }
+                },
+                {
+                breakpoint: 720,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    arrows:false,
+                    dots:true,
+                }
+                },
+                // You can unslick at a given breakpoint now by adding:
+                // settings: "unslick"
+                // instead of a settings object
+            ]
+        });
+
+        // feature 
+        $('.team').slick({
+            dots: true,
+            arrows:true,
+            infinite: true,
+            speed: 300,
+            slidesToShow: 4,
+            slidesToScroll: 1,
+            responsive: [
+                {
+                breakpoint: 1000,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 1,
+                    infinite: true,
+                }
+                },
+                {
+                breakpoint: 900,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 1,
+                    infinite: true,
+                }
+                },
+                {
+                breakpoint: 720,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    arrows:false,
+                    dots:true,
+                }
+                },
+                // You can unslick at a given breakpoint now by adding:
+                // settings: "unslick"
+                // instead of a settings object
+            ]
+        });
+    </script>
+</body>
+</html>
